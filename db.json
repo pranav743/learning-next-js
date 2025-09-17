@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Test Blog",
+      "content": "This is a test blog post created via the API.",
+      "image": null
+    },
+    {
+      "id": 2,
+      "title": "Test Blog",
+      "content": "This is a test blog post created via the API.",
+      "image": null
+    }
+  ]
+}
