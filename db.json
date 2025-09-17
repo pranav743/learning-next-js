@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The God of Small Things",
+      "author": "Arundhati Roy",
+      "year": 1997
+    },
+    {
+      "id": 2,
+      "title": "Midnight's Children",
+      "author": "Salman Rushdie",
+      "year": 1981
+    },
+    {
+      "id": 3,
+      "title": "A Suitable Boy",
+      "author": "Vikram Seth",
+      "year": 1993
+    },
+    {
+      "id": 4,
+      "title": "The Mahabharata: A Modern Rendering",
+      "author": "Ramesh Menon",
+      "year": 2006
+    },
+    {
+      "id": 5,
+      "title": "Shantaram",
+      "author": "Gregory David Roberts",
+      "year": 2003
+    },
+    {
+      "id": 6,
+      "title": "Train to Pakistan",
+      "author": "Khushwant Singh",
+      "year": 1956
+    },
+    {
+      "id": 7,
+      "title": "The White Tiger",
+      "author": "Aravind Adiga",
+      "year": 2008
+    },
+    {
+      "id": 8,
+      "title": "Sacred Games",
+      "author": "Vikram Chandra",
+      "year": 2006
+    },
+    {
+      "id": 9,
+      "title": "The Rozabal Line",
+      "author": "Ashwin Sanghi",
+      "year": 2007
+    },
+    {
+      "id": 10,
+      "title": "The Palace of Illusions",
+      "author": "Chitra Banerjee Divakaruni",
+      "year": 2008
+    }
+  ]
+}
