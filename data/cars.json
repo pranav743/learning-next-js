@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "brand": "Mercedes-Benz",
+    "model": "S-Class S 400d",
+    "price": "₹1.85 Crore",
+    "engine": "3.0L V6 Diesel",
+    "power": "330 hp",
+    "fuelType": "Diesel",
+    "features": [
+      "Massage Seats",
+      "Ambient Lighting",
+      "MBUX Infotainment",
+      "360-degree Camera"
+    ]
+  },
+  {
+    "id": 2,
+    "brand": "BMW",
+    "model": "7 Series 740Li",
+    "price": "₹1.50 Crore",
+    "engine": "3.0L Inline-6 Petrol",
+    "power": "340 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Sky Lounge Panoramic Roof",
+      "Gesture Control",
+      "Executive Lounge Seating",
+      "Harman Kardon Audio"
+    ]
+  },
+  {
+    "id": 3,
+    "brand": "Audi",
+    "model": "A8 L 60 TFSI",
+    "price": "₹1.58 Crore",
+    "engine": "4.0L V8 Petrol",
+    "power": "460 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Matrix LED Headlights",
+      "Virtual Cockpit Plus",
+      "Bang & Olufsen Audio",
+      "Predictive Active Suspension"
+    ]
+  },
+  {
+    "id": 4,
+    "brand": "Jaguar",
+    "model": "XJ L Portfolio",
+    "price": "₹1.11 Crore",
+    "engine": "2.0L Inline-4 Petrol",
+    "power": "300 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Soft Door Close",
+      "Meridian Audio",
+      "Touch Pro Duo",
+      "Windsor Leather Seats"
+    ]
+  },
+  {
+    "id": 5,
+    "brand": "Lexus",
+    "model": "LS 500h",
+    "price": "₹1.88 Crore",
+    "engine": "3.5L V6 Hybrid",
+    "power": "359 hp",
+    "fuelType": "Hybrid",
+    "features": [
+      "Mark Levinson Audio",
+      "Kiriko Glass",
+      "Shiatsu Massage",
+      "28-way Power Seats"
+    ]
+  },
+  {
+    "id": 6,
+    "brand": "Volvo",
+    "model": "S90 T8 Inscription",
+    "price": "₹61.90 Lakh",
+    "engine": "2.0L Inline-4 Hybrid",
+    "power": "407 hp",
+    "fuelType": "Hybrid",
+    "features": [
+      "Air Suspension",
+      "Bowers & Wilkins Audio",
+      "Thor's Hammer LED DRL",
+      "Nappa Leather"
+    ]
+  },
+  {
+    "id": 7,
+    "brand": "Maserati",
+    "model": "Quattroporte GTS",
+    "price": "₹1.74 Crore",
+    "engine": "3.8L V8 Twin-Turbo",
+    "power": "530 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Alcantara Interior",
+      "Harman Kardon Premium Audio",
+      "Skyhook Suspension",
+      "Carbon Fiber Trim"
+    ]
+  },
+  {
+    "id": 8,
+    "brand": "Bentley",
+    "model": "Flying Spur V8",
+    "price": "₹3.10 Crore",
+    "engine": "4.0L V8 Twin-Turbo",
+    "power": "542 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Naim Audio",
+      "Mulliner Driving Specification",
+      "Diamond Quilted Leather",
+      "Rotating Display"
+    ]
+  },
+  {
+    "id": 9,
+    "brand": "Rolls-Royce",
+    "model": "Ghost",
+    "price": "₹6.95 Crore",
+    "engine": "6.75L V12 Twin-Turbo",
+    "power": "563 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Starlight Headliner",
+      "Spirit of Ecstasy",
+      "Bespoke Audio",
+      "Magic Carpet Ride"
+    ]
+  },
+  {
+    "id": 10,
+    "brand": "Porsche",
+    "model": "Panamera Turbo S",
+    "price": "₹2.43 Crore",
+    "engine": "4.0L V8 Twin-Turbo",
+    "power": "630 hp",
+    "fuelType": "Petrol",
+    "features": [
+      "Burmester High-End Audio",
+      "Adaptive Air Suspension",
+      "Sport Chrono Package",
+      "Porsche Communication Management"
+    ]
+  }
+]

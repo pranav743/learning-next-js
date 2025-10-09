@@ -1,0 +1,9 @@
+{
+  "brand": "Ferrari",
+  "model": "SF90 Stradale", 
+  "price": "₹7.50 Crore",
+  "engine": "4.0L V8 + Electric",
+  "power": "986 hp",
+  "fuelType": "Hybrid",
+  "features": ["KERS System", "Carbon Fiber Body", "F1 Technology"]
+}
