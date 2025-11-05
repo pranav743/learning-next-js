@@ -1,22 +1,79 @@
-# MongoDB CRUD Queries for Order Management
+# Recipe Management MongoDB Database
+# 1. Insert the sample data into the 'recipes' collection
+mongoimport --db recipe_management --collection recipes --file Recepies.json --jsonArray
 
-# 1. Insert the sample data into the 'orders' collection
-mongoimport --db order_management --collection orders --file Orders.json --jsonArray
+# 2. Retrieve all recipes with cuisine "Italian"
+db.recipes.find({ cuisine: "Italian" })
 
-# 2. Retrieve all orders with the order_status "shipped"
-db.orders.find({ order_status: "shipped" })
+# 3. Retrieve all recipes with a prep_time less than 30 minutes
+db.recipes.find({ prep_time: { $lt: 30 } })
 
-# 3. Update the total_amount of the order with order_id: 1 to 70000
-db.orders.updateOne({ order_id: 1 }, { $set: { total_amount: 70000 } })
+# 4. Retrieve all recipes where the price is greater than 500
+db.recipes.find({ price: { $gt: 500 } })
 
-# 4. Delete the order with order_id: 4
-db.orders.deleteOne({ order_id: 4 })
+# 5. Retrieve all recipes sorted by price in ascending order
+db.recipes.find().sort({ price: 1 })
 
-# 5. Retrieve the order with the customer_name: "Alice Johnson"
-db.orders.find({ customer_name: "Alice Johnson" })
+# 6. Update the price of the recipe with recipe_id: 2 (Chicken Biryani) to 900
+db.recipes.updateOne({ recipe_id: 2 }, { $set: { price: 900 } })
 
-# 6. Update the order_status of the order with order_id: 2 to "delivered"
-db.orders.updateOne({ order_id: 2 }, { $set: { order_status: "delivered" } })
+# 7. Retrieve only the name and price fields for all recipes
+db.recipes.find({}, { name: 1, price: 1, _id: 0 })
 
-# 7. Retrieve all orders with a total_amount greater than or equal to 15000
-db.orders.find({ total_amount: { $gte: 15000 } })
+# 8. Retrieve all recipes where the difficulty is "medium" and the price is less than 600
+db.recipes.find({ difficulty: "medium", price: { $lt: 600 } })
+
+# 9. Retrieve all recipes sorted by prep_time in descending order
+db.recipes.find().sort({ prep_time: -1 })
+
+# 10. Insert a new recipe: Chocolate Cake
+db.recipes.insertOne({
+	recipe_id: 11,
+	name: "Chocolate Cake",
+	ingredients: ["Flour", "Sugar", "Cocoa Powder", "Eggs", "Butter"],
+	cuisine: "American",
+	prep_time: 50,
+	difficulty: "medium",
+	price: 750
+})
+
+# 11. Delete the recipe with recipe_id: 4 (Caesar Salad)
+db.recipes.deleteOne({ recipe_id: 4 })
+
+# 12. Retrieve all recipes with cuisine "Japanese" or "Thai"
+db.recipes.find({ cuisine: { $in: ["Japanese", "Thai"] } })
+
+# 13. Retrieve all recipes where the ingredients include "Egg"
+db.recipes.find({ ingredients: "Egg" })
+
+# 14. Update the prep_time of the recipe with recipe_id: 7 (Pad Thai) to 35 minutes
+db.recipes.updateOne({ recipe_id: 7 }, { $set: { prep_time: 35 } })
+
+# 15. Delete all recipes where the price is greater than 1000
+db.recipes.deleteMany({ price: { $gt: 1000 } })
+
+# 16. Retrieve the first 3 recipes using the limit function
+db.recipes.find().limit(3)
+
+# 17. Skip the first 2 recipes and retrieve the rest
+db.recipes.find().skip(2)
+
+# 18. Retrieve all recipes with cuisine "Thai" and sort them by price in descending order
+db.recipes.find({ cuisine: "Thai" }).sort({ price: -1 })
+
+# 19. Insert another new recipe: Hummus
+db.recipes.insertOne({
+	recipe_id: 12,
+	name: "Hummus",
+	ingredients: ["Chickpeas", "Tahini", "Garlic", "Olive Oil", "Lemon Juice"],
+	cuisine: "Middle Eastern",
+	prep_time: 15,
+	difficulty: "easy",
+	price: 300
+})
+
+# 20. Count the number of recipes with difficulty "easy"
+db.recipes.countDocuments({ difficulty: "easy" })
+
+# 21. Retrieve all recipes with a prep_time greater than 40 minutes
+db.recipes.find({ prep_time: { $gt: 40 } })
