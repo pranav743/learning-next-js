@@ -1,0 +1,15 @@
+{
+  "products": [
+    { "id": 1, "name": "T-Shirt", "price": 499, "image": "/images/tshirt.png", "category": "Clothing", "rating": 4.2 },
+    { "id": 2, "name": "Sneakers", "price": 2999, "image": "/images/sneakers.png", "category": "Footwear", "rating": 4.5 },
+    { "id": 3, "name": "Backpack", "price": 1499, "image": "/images/backpack.png", "category": "Accessories", "rating": 4.1 },
+    { "id": 4, "name": "Watch", "price": 3999, "image": "/images/watch.png", "category": "Accessories", "rating": 4.6 },
+    { "id": 5, "name": "Jeans", "price": 1299, "image": "/images/jeans.png", "category": "Clothing", "rating": 4.3 },
+    { "id": 6, "name": "Sunglasses", "price": 799, "image": "/images/sunglasses.png", "category": "Accessories", "rating": 4.0 },
+    { "id": 7, "name": "Jacket", "price": 2499, "image": "/images/jacket.png", "category": "Clothing", "rating": 4.4 },
+    { "id": 8, "name": "Boots", "price": 3499, "image": "/images/boots.png", "category": "Footwear", "rating": 4.5 },
+    { "id": 9, "name": "Cap", "price": 399, "image": "/images/cap.png", "category": "Accessories", "rating": 3.9 },
+    { "id": 10, "name": "Belt", "price": 599, "image": "/images/belt.png", "category": "Accessories", "rating": 4.1 }
+  ],
+  "cart": []
+}

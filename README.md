@@ -1,5 +1,36 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# Simple E-Commerce App (Next.js + JSON Server)
+
+## Features
+- Browse products
+- Add to cart
+- View and remove cart items
+- Responsive, minimal UI
+- Consistent layout with header, sidebar, and footer
+- Uses Next.js App Router, revalidatePath, revalidateTag, next/navigation
+
+## Setup
+
+### 1. Install dependencies
+```
+yarn install
+```
+
+### 2. Start JSON Server
+```
+yarn global add json-server
+json-server --watch src/data/db.json --port 3001
+```
+
+### 3. Start Next.js app
+```
+yarn dev
+```
+
+- Products: [http://localhost:3000/products](http://localhost:3000/products)
+- Cart: [http://localhost:3000/cart](http://localhost:3000/cart)
+
 ## Getting Started
 
 First, run the development server:
