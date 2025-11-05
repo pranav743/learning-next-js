@@ -1,45 +1,74 @@
-# L1: Redis Caching + Cron Job for Bulk Book Processing in a Books App
+# Books Management API
 
-## Problem Statement
-You are tasked with building a Books Management API using Node.js and Express that supports user authentication and CRUD operations for books, enhanced with Redis caching and a cron job for bulk book insertion.
+## Features
+- User authentication (JWT)
+- CRUD for books (per user)
+- Redis caching for GET /books (per user)
+- Bulk books insertion via Redis + cron job
+- MongoDB (Mongoose)
 
-## Requirements
+## Setup
 
-### 1. User Authentication
-- Implement routes for user signup and login.
-- Authentication can be session-based, JWT-based, or any secure method.
-- Each authenticated user should have their own isolated data namespace in Redis.
+### 1. Install dependencies
 
-### 2. Book CRUD Operations
-- Implement standard CRUD routes for managing books:
-  - `GET /books` - List all books for the authenticated user.
-  - `POST /books` - Add a new book.
-  - `PUT /books/:id` - Update a book by ID.
-  - `DELETE /books/:id` - Delete a book by ID.
+```
+yarn install
+```
 
-### 3. Redis Caching
-- Cache the response of the `GET /books` route in Redis for each user separately.
-- Subsequent GET requests should serve data from Redis if available.
-- On any change (add, update, delete), invalidate the corresponding Redis cache for that user.
+### 2. Configure environment
 
-### 4. Bulk Books Insertion via Redis + Cron Job
-- Implement a route: `POST /books/bulk`
-  - Accepts an array of books for the authenticated user.
-  - Instead of immediately inserting into the database, store this array in Redis under a user-specific key.
-  - Return a response immediately: "Books will be added later."
-- Implement a cron job that runs every 2 minutes.
-  - The job should read all pending bulk book arrays from Redis for all users.
-  - For each user, insert the bulk books into the database.
-  - Remove the processed entries from Redis after successful insertion.
+Copy `.env.example` to `.env` and set values as needed.
 
-## Additional Expectations
-- Redis keys for caching and bulk books must be scoped by user ID or username to ensure data separation.
-- Proper error handling and validation.
-- Efficient Redis usage (e.g., using hashes or sets as appropriate).
-- Secure handling of user authentication tokens or sessions.
-- The cron job should not block the main app and should handle failures gracefully.
+### 3. Start MongoDB
 
-## Deliverables
-- Fully functional API supporting the above features.
-- Documentation/comments explaining how caching and cron jobs are implemented.
-- Instructions on how to test the bulk books insertion flow with Redis and cron jobs.
+Ensure MongoDB is running locally or update `MONGO_URI` in `.env`.
+
+### 4. (Optional) Start Redis
+
+- If Redis is not running, caching and bulk jobs will be skipped gracefully.
+- To run Redis locally:
+  - On macOS: `brew install redis && brew services start redis`
+  - Or use Docker: `docker run -p 6379:6379 redis`
+
+### 5. Start the server
+
+```
+yarn dev
+```
+
+## API Endpoints
+
+### Auth
+- `POST /api/signup` { username, password }
+- `POST /api/login` { username, password }
+
+### Books (JWT required)
+- `GET /api/books` — List all books (cached)
+- `POST /api/books` — Add a book
+- `PUT /api/books/:id` — Update a book
+- `DELETE /api/books/:id` — Delete a book
+- `POST /api/books/bulk` — Bulk add books (array)
+
+## Bulk Books Insertion Flow
+1. Send `POST /api/books/bulk` with `{ books: [ ... ] }` (array of book objects).
+2. Books are stored in Redis under your user key.
+3. Every 2 minutes, a background cron job reads all users' pending bulk books from Redis and inserts them into MongoDB.
+4. After successful insertion, the Redis entry is deleted.
+
+## Notes
+- Redis keys are always scoped per user.
+- If Redis is unavailable, caching and bulk jobs are skipped without crashing the app.
+- Cron job runs in a non-blocking way.
+- All validation and error handling is enforced.
+
+## Testing Bulk Insert
+- Use `POST /api/books/bulk` with a valid JWT and a body like:
+  ```json
+  {
+    "books": [
+      { "title": "Book 1", "author": "A" },
+      { "title": "Book 2", "author": "B" }
+    ]
+  }
+  ```
+- Wait up to 2 minutes for the books to appear in `GET /api/books`.
