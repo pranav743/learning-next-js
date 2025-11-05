@@ -1,11 +1,11 @@
 import { createUser, findUserByUsername, validatePassword } from '../services/userService.js'
 import jwt from 'jsonwebtoken'
 async function signup(req, res) {
-  const { username, password } = req.body
+  const { username, password, email } = req.body
   const exists = await findUserByUsername(username)
   if (exists) return res.status(409).json({ error: 'User exists' })
-  const user = await createUser(username, password)
-  res.status(201).json({ id: user._id, username: user.username })
+  const user = await createUser(username, password, email)
+  res.status(201).json({ id: user._id, username: user.username, email: user.email })
 }
 async function login(req, res) {
   const { username, password } = req.body

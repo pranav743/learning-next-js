@@ -1,0 +1,57 @@
+### Signup (register new user)
+POST http://localhost:4000/api/signup
+Content-Type: application/json
+
+{
+  "username": "testuser1",
+  "password": "testpass123",
+  "email": "testuser1@example.com"
+}
+
+### Login (get JWT)
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+  "username": "testuser1",
+  "password": "testpass123"
+}
+
+### Add a book (replace <token> with JWT)
+POST http://localhost:4000/api/books
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "title": "Book Title 1",
+  "author": "Author 1"
+}
+
+### List books (replace <token> with JWT)
+GET http://localhost:4000/api/books
+Authorization: Bearer <token>
+
+### Update a book (replace <token> and <bookId>)
+PUT http://localhost:4000/api/books/<bookId>
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title"
+}
+
+### Delete a book (replace <token> and <bookId>)
+DELETE http://localhost:4000/api/books/<bookId>
+Authorization: Bearer <token>
+
+### Bulk insert books (replace <token> with JWT)
+POST http://localhost:4000/api/books/bulk
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "books": [
+    { "title": "Bulk Book 1", "author": "Bulk Author 1" },
+    { "title": "Bulk Book 2", "author": "Bulk Author 2" }
+  ]
+}
